@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "description": "Docs and examples for Svelte",
   "scripts": {
-    "dev": "node scripts/update.js && npm run copy-workers && sapper dev",
-    "copy-workers": "node scripts/copy-workers.js",
-    "migrate": "node-pg-migrate -r dotenv/config",
-    "build": "node scripts/update.js && npm run copy-workers && sapper build --legacy",
-    "update": "node scripts/update.js --force=true",
-    "start": "node __sapper__/build",
-    "test": "mocha -r esm test/**",
-    "deploy": "make deploy"
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "start": "sirv public --no-clear",
   },
   "dependencies": {
     "@polka/redirect": "^1.0.0-next.7",
